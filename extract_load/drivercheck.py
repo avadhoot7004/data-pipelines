@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 
 engine = create_engine(
-    "postgresql://etl:demopass@localhost:5432/adventureworks"
+    "postgresql://uid:pass@localhost:5432/adventureworks"
 )
 
 with engine.connect() as conn:
