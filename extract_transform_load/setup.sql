@@ -47,3 +47,17 @@ CREATE TABLE analytics_db.sales_summary (
  order_month TEXT, -- e.g. '2024-01'
  status TEXT
 );
+
+--to avoid duplicates when python script is re-run
+
+ALTER TABLE analytics_db.sales_summary
+ADD CONSTRAINT sales_summary_order_id_unique
+UNIQUE(order_id);
+
+--customer aggregation table
+CREATE TABLE analytics_db.customer_totals (
+    customer_name TEXT,
+    total_spend NUMERIC(10,2),
+    order_count INT
+);
+
