@@ -6,13 +6,13 @@ This directory contains a simple **Extract and Load (EL)** pipeline that migrate
 
 ```mermaid
 graph LR
-    subgraph Source [MS SQL Server]
+    subgraph "Source [MS SQL Server]"
         db1[(AdventureWorksDW2025)]
     end
-    subgraph ETL [Python Pipeline]
+    subgraph "ETL [Python Pipeline]"
         script[etl.py]
     end
-    subgraph Target [PostgreSQL]
+    subgraph "Target [PostgreSQL]"
         db2[(AdventureWorks)]
     end
 

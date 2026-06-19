@@ -6,19 +6,19 @@ This directory contains a complete **Extract, Transform, and Load (ETL)** pipeli
 
 ```mermaid
 graph TD
-    subgraph PostgreSQL Database
-        subgraph Source Schemas
+    subgraph "PostgreSQL Database"
+        subgraph "Source Schemas"
             O[orders_db.orders]
             P[products_db.products]
         end
 
-        subgraph Python ETL Process [etl_pipeline.py]
+        subgraph "Python ETL Process [etl_pipeline.py]"
             E[Extract orders & products]
             T["Transform (Calculate total spend, map products, format dates)"]
             A[Aggregate customer metrics in-memory]
         end
 
-        subgraph Target Schemas (analytics_db)
+        subgraph "Target Schemas (analytics_db)"
             S[sales_summary]
             C[customer_totals]
         end
