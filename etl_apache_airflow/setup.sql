@@ -61,7 +61,7 @@ CREATE TABLE analytics_db.customer_totals (
     order_count INT
 );
 
---end of previous sql
+--end of previous sql setup, now adding new columns and constraints for better tracking and data integrity
 
 --adding ingested_at column to track when data was ingested
 ALTER TABLE analytics_db.sales_summary
