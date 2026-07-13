@@ -35,6 +35,6 @@ models:
     staging:
       +materialized: view
       snowflake_warehouse: dbt_wh
-      marts:
+    marts:
       +materialized: table
       snowflake_warehouse: dbt_wh

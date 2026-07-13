@@ -23,28 +23,9 @@ This repository contains example ETL pipelines and supporting scripts used for l
 	- [dags/etl_dag.py](etl_apache_airflow/dags/etl_dag.py) — The Airflow DAG scheduling and pipeline structure.
 	- [dags/etl_incremental.py](etl_apache_airflow/dags/etl_incremental.py) — Python script managing incremental load logic (Watermarking & 7-day lookbacks).
 
-## Getting started
-
-Requirements: Python 3.8+ and Docker (required for running the Apache Airflow orchestration).
-
-1. Create and activate a virtual environment (recommended):
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-2. Install dependencies for a folder you want to run. (Example for `extract_load`):
-
-```powershell
-pip install -r extract_load/requirements.txt
-```
-
-3. Configure database connection settings or environment variables as required by the scripts, then run the desired pipeline. Example:
-
-```powershell
-python extract_transform_load/etl_pipeline.py
-```
-
-
-
+- [elt_snowflake/](elt_snowflake/) — ELT pipeline using dbt (data build tool) on Snowflake sample data.
+	- [data_pipeline_dbt/](elt_snowflake/data_pipeline_dbt/) — The dbt project directory containing models, configurations, and tests.
+	- [data_pipeline_dbt/models/staging/](elt_snowflake/data_pipeline_dbt/models/staging/) — Staging models mapping raw Snowflake sources to cleaned views.
+	- [data_pipeline_dbt/models/marts/](elt_snowflake/data_pipeline_dbt/models/marts/) — Marts models containing transformed fact tables and metrics.
+	- [data_pipeline_dbt/macros/pricing.sql](elt_snowflake/data_pipeline_dbt/macros/pricing.sql) — Custom pricing macros.
+	- [requirements.txt](elt_snowflake/requirements.txt) — Python dependencies for Snowflake and dbt.
