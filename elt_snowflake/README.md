@@ -15,25 +15,25 @@ The following Mermaid diagram traces the data flow from Snowflake's sample datas
 ```mermaid
 graph TD
     %% Source Database
-    subgraph Snowflake Sample Data (snowflake_sample_data.tpch_sf1)
+    subgraph src_db ["Snowflake Sample Data (snowflake_sample_data.tpch_sf1)"]
         src_orders[(orders)]
         src_lineitem[(lineitem)]
     end
 
     %% Staging Layer
-    subgraph Staging Layer (Views)
+    subgraph staging_layer ["Staging Layer (Views)"]
         stg_orders[stg_tpch_orders]
         stg_line_items[stg_tpch_line_items]
     end
 
     %% Intermediate Layer
-    subgraph Marts - Intermediate Layer (Tables/Views)
+    subgraph intermediate_layer ["Marts - Intermediate Layer (Tables/Views)"]
         int_order_items[int_order_items]
         int_order_items_summary[int_order_items_summary]
     end
 
     %% Marts Layer
-    subgraph Marts - Fact Layer (Tables)
+    subgraph marts_layer ["Marts - Fact Layer (Tables)"]
         fct_orders[fct_orders]
     end
 
